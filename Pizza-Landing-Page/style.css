@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 60px;
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+}
+
+.logo {
+    font-size: 28px;
+    font-style: italic;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    position: relative;
+    min-height: 100vh;
+
+    /* Background image FIXED */
+    background-image: url("hero-pizza.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Dark overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 1;
+}
+
+/* Layer fix */
+.content,
+.image-section,
+.smoke {
+    position: relative;
+    z-index: 2;
+}
+
+/* Left content */
+.content {
+    max-width: 600px;
+}
+
+.title {
+    font-size: 100px;
+    color: orange;
+}
+
+.content h2 {
+    font-size: 80px;
+    font-family: cursive;
+}
+
+.content h4 {
+    margin: 15px 0;
+}
+
+.content p {
+    font-size: 20px;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.btn {
+    padding: 10px 25px;
+    border: none;
+    background: white;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+/* Glow Effect */
+.glow {
+    text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px orange;
+}
+
+/* Right Image */
+.image-section {
+    position: relative;
+}
+
+/* Pizza rotation working */
+.pizza {
+    width: 400px;
+    animation: rotatePizza 15s linear infinite;
+}
+
+/* Rotation Animation */
+@keyframes rotatePizza {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Discount badge */
+.discount {
+    position: absolute;
+    top: 20px;
+    right: -40px;
+    background: gold;
+    color: black;
+    padding: 15px 18px;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+/* Smoke Effect */
+.smoke {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    filter: blur(30px);
+    animation: smoke 6s infinite;
+    bottom: 120px;
+    left: 55%;
+}
+
+.s2 {
+    animation-delay: 2s;
+    left: 60%;
+}
+
+.s3 {
+    animation-delay: 4s;
+    left: 65%;
+}
+
+@keyframes smoke {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-200px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 120px 20px 40px;
+    }
+
+    .pizza {
+        width: 260px;
+        margin-top: 40px;
+    }
+
+    .discount {
+        right: 0;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .title {
+        font-size: 60px;
+    }
+
+    .content h2 {
+        font-size: 50px;
+    }
+}   
