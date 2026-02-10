@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+
+  <h2>Temperature Converter Website</h2>
+
+  <!-- Input field -->
+  <input type="text" id="temperature" placeholder="Enter temperature">
+
+  <!-- Dropdown menu -->
+  <select id="unit">
+    <option value="c_to_f">Celsius to Fahrenheit</option>
+    <option value="f_to_c">Fahrenheit to Celsius</option>
+    <option value="c_to_k">Celsius to Kelvin</option>
+  </select>
+
+  <!-- Convert button -->
+  <button onclick="convertTemperature()">Convert</button>
+
+  <!-- Display area -->
+  <div class="result" id="result"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
